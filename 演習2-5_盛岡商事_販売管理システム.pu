@@ -1,0 +1,10 @@
+@startuml ユースケース図
+left to right direction
+actor 販売管理システム#DDDDDD;line:black;line.bold;
+rectangle 盛岡商事{
+    usecase (注文商品の確認\n田中さん)as input
+    usecase (商品の出荷状況の登録\n鈴木さん)as in
+}
+販売管理システム --|> in
+販売管理システム --|> input
+@enduml
