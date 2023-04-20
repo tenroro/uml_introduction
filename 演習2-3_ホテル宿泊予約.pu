@@ -5,5 +5,5 @@ actor 利用者#DDDDDD;line:black;line.bold;
   usecase ログインする
  }
  利用者-->ホテルを予約する
- ホテルを予約する <.ログインする : << include>>
+ ホテルを予約する .>ログインする : << include>>
  @enduml

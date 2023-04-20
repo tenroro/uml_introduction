@@ -5,7 +5,7 @@ actor 利用者#DDDDDD;line:black;line.bold;
     usecase キャンペーン期間中
     usecase (<u>ホテルを予約する</u>)as input
  }
-ログインする <.input : << include>>
-input <.(キャンペーン期間中) : <<extend>>
+ログインする .>input : << include>>
+input .>(キャンペーン期間中) : <<extend>>
 利用者-->ログインする
  @enduml
