@@ -13,6 +13,7 @@ usecase ログイン
 usecase 会員登録
 }
 利用者-->会員登録
+ログイン<|--会員登録
 ログイン.>input : << include>>
 input .>(キャンペーン期間中) : <<extend>>
 利用者-->ログイン
