@@ -1,0 +1,23 @@
+@startuml 演習2-8
+left to right direction
+actor 利用者#DDDDDD;line:black;line.bold;
+actor ホテル管理人#DDDDDD;line:black;line.bold;
+actor ホテル従業員#DDDDDD;line:black;line.bold;
+rectangle ホテル{
+usecase 空き室の閲覧
+usecase キャンペーン期間中
+usecase (<u>ホテルを予約する</u>)as input
+usecase 空き室状況の入力
+usecase 予約の集計
+usecase ログイン
+usecase 会員登録
+}
+利用者-->会員登録
+ログイン.>input : << include>>
+input .>(キャンペーン期間中) : <<extend>>
+利用者-->ログイン
+利用者-->空き室の閲覧
+ログイン<-- ホテル管理人
+ホテル管理人-->予約の集計
+ホテル従業員-->空き室状況の入力
+ホテル従業員-->ログイン
