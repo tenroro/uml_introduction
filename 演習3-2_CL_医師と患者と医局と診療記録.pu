@@ -1,0 +1,12 @@
+@startuml
+left to right direction
+
+class 医局 {
+- 医局名:string
+---
++ set medical office(医局名:string) void
+}
+
+患者 "1"<-- 医者:診察
+医局"1"<-- 医者:所属
+@enduml
