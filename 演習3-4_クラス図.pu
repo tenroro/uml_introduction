@@ -1,0 +1,12 @@
+@startuml
+class Car {
+  - タイヤ: タイヤ[4]
+}
+
+class タイヤ {
+  - size: int
+  - manufacturer: string
+}
+
+Car "1"-- "4" タイヤ 
+@enduml
