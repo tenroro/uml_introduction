@@ -1,0 +1,16 @@
+@startuml
+left to right direction
+class 社員A {
+-高橋洋平さん
+}
+class 社員B{
+-樋口正之さん
+}
+class 情報処理技術者試験 {
+-情報処理安全確保支援:2020年10月21日
+}
+class 
+
+社員A"1"--"*" 情報処理技術者試験:持つ
+社員B"1"--"*" 情報処理技術者試験:持つ
+@enduml

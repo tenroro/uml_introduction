@@ -1,0 +1,17 @@
+@startuml ラーメン屋での注文
+hide footbox
+actor 客 as guest
+mainframe sd ラーメン屋さん
+participant ":フロア店員" as clear
+participant ":料理人" as cook
+activate guest
+guest ->clear:ラーメンを注文する
+activate clear
+clear ->cook:料理を指示する
+activate cook
+cook -> cook:料理をする
+deactivate cook
+cook -->> clear:ラーメン
+deactivate clear
+clear -->> guest:ラーメン
+deactivate guest

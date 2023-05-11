@@ -1,0 +1,12 @@
+@startuml
+hide footbox
+participant "利用者:user" as user
+participant ":予約画面" as login
+activate user
+user -> login:メッセージを送る()
+activate login
+login -> login: 予約確認（）
+activate login
+deactivate user
+deactivate login
+@enduml
