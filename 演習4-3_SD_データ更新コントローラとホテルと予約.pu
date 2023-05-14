@@ -1,0 +1,17 @@
+@startuml
+hide footbox
+participant "コントローラクラス" as control
+participant "ホテル" as hotel
+participant "予約オブジェクト" as object
+
+activate control
+control -> hotel:予約の操作
+activate object
+activate hotel
+hotel -> object:新規作成
+hotel -> hotel:予約の登録
+activate hotel
+deactivate control
+deactivate hotel
+deactivate object
+@enduml
