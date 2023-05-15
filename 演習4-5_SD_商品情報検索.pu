@@ -1,0 +1,27 @@
+@startuml product
+hide footbox
+actor ":会員" as user
+participant "商品検索画面" as boundary  <<boundary>>
+participant "商品検索" as control  <<control>>
+participant "商品" as syohin  <<entity>>
+participant "商品カテゴリ" as cacte  <<entity>>
+
+activate user
+user -> boundary:検索画面に移動
+activate boundary
+boundary -> control:商品の検索(商品名)
+activate control
+create syohin
+control -->> syohin: <<create>> 生成()
+    loop 商品カテゴリ数
+    create cacte
+    control -->> cacte : <<create>> 生成()
+    control -> syohin :商品カテゴリの設定()
+    activate syohin
+    deactivate syohin 
+end loop
+control -->> boundary:商品情報
+deactivate control
+boundary -> boundary:商品を表示する(商品情報)
+activate boundary
+@enduml
