@@ -1,0 +1,22 @@
+@startuml kadai
+hide footbox
+actor ":ユーザー" as user
+participant ":ブラウザ" as burauza
+participant ":Webサーバー" as Webserver 
+participant ":画像サーバー" as capu
+
+activate user
+user -> burauza:画像のリンクボタンをクリック()
+activate burauza
+burauza -> Webserver:画像のファイル名()
+activate Webserver
+Webserver->capu:画像ファイルを検索()
+activate capu
+capu->capu:画像ファイルを探す()
+capu->Webserver:閲覧可能状態にする
+deactivate capu
+Webserver->burauza:画像を再生する()
+deactivate Webserver
+burauza->user:画像を閲覧する()
+deactivate burauza
+@enduml
