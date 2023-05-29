@@ -1,0 +1,22 @@
+@startuml 自販機シーケンス図
+hide footbox
+actor 客 as user
+participant "料金装置" as money
+participant "ボタン" as botan
+participant "ベンダー装置" as bender
+
+activate user
+user -> money :お金を入れる
+
+activate money
+money -> botan :ボタンを押す
+deactivate money
+activate botan
+botan -> bender :ドリンクを用意する
+deactivate botan
+activate bender
+bender->bender :ドリンクが出てくる
+bender->user :ドリンクを手にする
+deactivate bender
+deactivate user
+@enduml
