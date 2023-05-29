@@ -1,0 +1,19 @@
+@startuml 並列処理
+title カレー作り
+start
+:材料を用意する;
+fork 
+:野菜を切る;
+:肉を切る;
+:具材を炒める;
+:具材を煮る;
+note right
+しっかりと煮込む
+end note
+fork again
+:ご飯を研ぐ;
+:ご飯を炊く;
+end fork
+:盛り付ける;
+stop
+@enduml
