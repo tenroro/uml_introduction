@@ -1,0 +1,16 @@
+@startuml クラス図
+left to right direction
+class ライトレーサー
+class 光センサー
+class 右モーター
+class 左モーター
+class CPU
+class 電源SW
+
+ライトレーサー o-- 光センサー
+ライトレーサー o-- 右モーター
+ライトレーサー o-- 左モーター
+ライトレーサー o-- 光モーター
+ライトレーサー o-- CPU
+ライトレーサー o-- 電源SW
+@enduml
