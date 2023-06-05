@@ -1,0 +1,16 @@
+@startuml ホテルアクティ
+
+start
+repeat
+:ユーザー名を入力する;
+:パスワードを入力する;
+repeat while (認証成功) ->[失敗]
+
+:予約を行う;
+
+stop
+
+@enduml
+
+
+

@@ -1,0 +1,59 @@
+@startuml クラス図
+class "注文" as all{
+    -合計
+}
+class "注文明細" as meisai{
+    -数量
+    -小計
+}
+class "割引クーポン" as kupon{
+    -値引き額
+    -期限
+}
+class "商品" as menu{
+    -名称
+    -単価
+}
+class "ドリンク" as drink{
+    -種別
+}
+class "カップ" as cup{
+    -サイズ
+}
+class "フード" as food{
+}
+class "レシピ" as resipi{
+}
+class "ポテト" as potate{
+    -サイズ
+}
+class "ハンバーガー" as bagaer{
+    -種別
+}
+class "材料" as zairyou{
+}
+class "ぱん" as pan{
+}
+class "肉" as meet{
+}
+class "野菜" as begi{
+}
+class "チーズ" as tizu{
+}
+all "1" o-ri- "*" meisai
+meisai "0..1" -ri- kupon
+meisai "0"  -ri- "*" kupon
+meisai "0..*" -down- "1" menu
+menu <|-left- drink
+drink "0..*" -left- cup
+drink "1..3" -left- cup
+menu <|-down- food
+food "1" -right- "1" resipi
+food <|-down- potate
+food <|-down- bagaer
+bagaer "1..*" o-left zairyou
+zairyou <|-down- pan
+zairyou <|-down- meet
+zairyou <|-down- begi
+zairyou <|-down- tizu
+@enduml
